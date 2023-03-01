@@ -68,6 +68,19 @@ Vous devez développer un système capable de prédire les développements de ce
 
 Les ordinateurs dont vous disposez sont anciens (soucis de budget de la NASA), il est donc préférable de ne pas utiliser de librairies graphiques trop lourdes. Vous pouvez utiliser la SFML.
 
+
+## Ressources
+
+Les autres scientifiques de votre équipe ont mis au point quelques morceaux de code pour vous aider à démarrer :
+
+- Une classe permettant de lire un fichier de configuration (ConfigFile.hpp/cpp -> ConfigFile)
+- Une classe permettant de représenter une cellule (Cell.hpp/cpp -> Cell)
+- Une classe permettant de gérer la simulation (Simulation.hpp/cpp -> Simulation)
+
+Malheureusement, ces classes ont également été endommagées pendant leur transfert à votre base. Vous devez donc les compléter pour pouvoir utiliser ces classes dans votre programme.
+
+Heureusement pour vous, les autres scientifiques ne sont pas des cochons et ont pensé à commenter leur code et utiliser des noms explicites pour vous aider à comprendre ce qu'ils voulaient faire. Cela devrait vous permettre de retrouver vos marques.
+
 ## Bonus
 
 - Une fois votre simulation fonctionnelle, vous pouvez vous amuser à trouver des configurations de milieu de culture particulièrement intéressantes (stables, mouvantes, etc.)

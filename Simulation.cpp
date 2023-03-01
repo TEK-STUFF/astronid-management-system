@@ -1,5 +1,10 @@
 #include "Simulation.hpp"
 
+Simulation::Simulation() {
+    this->grid_width = 0;
+    this->grid_height = 0;
+}
+
 Simulation::Simulation(int grid_width, int grid_height, int cell_size) {
     this->grid_width = grid_width;
     this->grid_height = grid_height;
@@ -21,24 +26,18 @@ Simulation::Simulation(std::vector<std::vector<bool>> map) {
 Simulation::~Simulation() = default;
 
 void Simulation::update() {
+    // this loop updates the number of neighbours for each cell, then determines if the cell will be alive or dead in the next generation
     for (int i = 0; i < this->grid_width; i++) {
         for (int j = 0; j < this->grid_height; j++) {
             int neighbours = 0;
             if (i > 0 && j > 0 && this->grid[i - 1][j - 1].isAlive()) {
                 neighbours++;
             }
-            if (i > 0 && this->grid[i - 1][j].isAlive()) {
-                neighbours++;
-            }
-            if (i > 0 && j < this->grid_height - 1 && this->grid[i - 1][j + 1].isAlive()) {
-                neighbours++;
-            }
-            if (j > 0 && this->grid[i][j - 1].isAlive()) {
-                neighbours++;
-            }
-            if (j < this->grid_height - 1 && this->grid[i][j + 1].isAlive()) {
-                neighbours++;
-            }
+
+            //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+             /// warning : an unknown number of bytes have been lost ///
+            //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
+
             if (i < this->grid_width - 1 && j > 0 && this->grid[i + 1][j - 1].isAlive()) {
                 neighbours++;
             }
@@ -51,7 +50,9 @@ void Simulation::update() {
             this->grid[i][j].setNeighbours(neighbours);
             if (this->grid[i][j].isAlive()) {
                 if (neighbours < 2 || neighbours > 3) {
-                    this->grid[i][j].setDead();
+                    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+                    /// warning : an unknown number of bytes have been lost ///
+                    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
                 }
             } else {
                 if (neighbours == 3) {
@@ -106,10 +107,6 @@ void Simulation::setRandomCells(int density) {
 
 }
 
-Simulation::Simulation() {
-    this->grid_width = 0;
-    this->grid_height = 0;
-}
 
 void Simulation::setMap(std::vector<std::vector<bool>> map) {
     this->grid_width = map.size();
@@ -132,6 +129,7 @@ void Simulation::setMap(std::vector<std::vector<bool>> map) {
 }
 
 void Simulation::setGridSize(int width, int height) {
-    this->grid_width = width;
-    this->grid_height = height;
+    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+    /// warning : an unknown number of bytes have been lost ///
+    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
 }

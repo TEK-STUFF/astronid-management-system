@@ -11,24 +11,22 @@ ConfigFile::ConfigFile() {
 
 ConfigFile::~ConfigFile() = default;
 
+// this function loads the config file and sets the values of the attributes
 void ConfigFile::loadConfigFile(const std::string &path) {
     std::ifstream file(path);
     if (file.is_open()) {
         std::string line;
         while (std::getline(file, line)) {
+            // if the line contains the word "cell_size", then we get the value after the '=' sign
             if (line.find("cell_color") != std::string::npos) {
                 this->cell_color = line.substr(line.find('=') + 1);
             } else if (line.find("cell_aging_color") != std::string::npos) {
                 this->cell_aging_color = line.substr(line.find('=') + 1);
-            } else if (line.find("background_color") != std::string::npos) {
-                this->background_color = line.substr(line.find('=') + 1);
-            } else if (line.find("cell_size") != std::string::npos) {
-                this->cell_size = std::stoi(line.substr(line.find('=') + 1));
-            } else if (line.find("cell_aging_speed") != std::string::npos) {
-                this->cell_aging_speed = std::stoi(line.substr(line.find('=') + 1));
-            } else if (line.find("grid_width") != std::string::npos) {
-                this->grid_width = std::stoi(line.substr(line.find('=') + 1));
-            } else if (line.find("grid_height") != std::string::npos) {
+            }
+                //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+                /// warning : an unknown number of bytes have been lost ///
+                //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
+            else if (line.find("grid_height") != std::string::npos) {
                 this->grid_height = std::stoi(line.substr(line.find('=') + 1));
             }
         }
@@ -49,6 +47,7 @@ void ConfigFile::loadConfigFile(const std::string &path) {
     }
 }
 
+// this function loads the map file and makes a vector of vectors of bools
 void ConfigFile::loadMap(const std::string &path, std::vector<std::vector<bool>> &map) {
     std::ifstream file(path);
     if (file.is_open()) {

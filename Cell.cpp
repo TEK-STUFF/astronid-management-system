@@ -22,7 +22,9 @@ void Cell::setDead() noexcept {
 }
 
 int Cell::getNeighbours() const noexcept {
-    return this->neighbours;
+    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+    /// warning : an unknown number of bytes have been lost ///
+    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
 }
 
 void Cell::setNeighbours(int nb) noexcept {
@@ -34,7 +36,9 @@ int Cell::getAge() const noexcept {
 }
 
 void Cell::setAge(int a) noexcept {
-    this->age = a;
+    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+    /// warning : an unknown number of bytes have been lost ///
+    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
 }
 
 void Cell::update() noexcept {

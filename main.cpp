@@ -10,9 +10,9 @@ void loadSimulationSettings(ConfigFile &config, Simulation &simulation) {
     std::string mapPath;
     std::vector<std::vector<bool>> booleanMap;
 
-    std::cout << "Enter config file path (leave empty for default): ";
+    std::cout << "Enter config file path: ";
     std::cin >> configPath;
-    std::cout << "Enter map file path (leave empty for default): ";
+    std::cout << "Enter map file path: ";
     std::cin >> mapPath;
 
     if (configPath.empty()) {
@@ -43,7 +43,9 @@ int main() {
                 window.close();
             if (event.type == sf::Event::KeyPressed) {
                 if (event.key.code == sf::Keyboard::Escape) {
-                    window.close();
+                    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+                    /// warning : an unknown number of bytes have been lost ///
+                    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
                 }
                 if (event.key.code == sf::Keyboard::Space) {
                     isPaused = !isPaused;
@@ -59,10 +61,13 @@ int main() {
                 Cell cell = simulation.grid[i][j];
                 sf::RectangleShape rectangle(sf::Vector2f(config.getCellSize(), config.getCellSize()));
                 rectangle.setPosition(i * config.getCellSize(), j * config.getCellSize());
+                // change cell color based on its state
                 if (cell.isAlive()) {
                     rectangle.setFillColor(sf::Color::White);
                 } else {
-                    rectangle.setFillColor(sf::Color::Black);
+                    //////////////// [[[ TRANSMISSION ERROR ]]] /////////////////
+                    /// warning : an unknown number of bytes have been lost ///
+                    //////////////// [[[ TRANSMISSION ERROR ]]] ////////////////
                 }
                 window.draw(rectangle);
             }
