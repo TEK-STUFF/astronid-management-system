@@ -1,0 +1,7 @@
+grid_width=40
+grid_height=40
+cell_size=30
+background_color=black
+cell_color=white
+cell_aging_speed=5
+cell_aging_color=green
