@@ -15,11 +15,6 @@ public:
     [[nodiscard]] int getAge() const noexcept;
     void setAge(int age) noexcept;
     void update() noexcept;
-    /*[[nodiscard]] sf::RectangleShape getShape() const noexcept;
-    [[nodiscard]] sf::Color getColor() const noexcept;
-    void setColor(sf::Color color) noexcept;
-    void setPos(int x, int y) noexcept;
-    void setSize(int size) noexcept;*/
 private:
     bool alive;
     bool next_state;

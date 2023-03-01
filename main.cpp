@@ -10,9 +10,9 @@ void loadSimulationSettings(ConfigFile &config, Simulation &simulation) {
     std::string mapPath;
     std::vector<std::vector<bool>> booleanMap;
 
-    std::cout << "Enter config file path (leave empty for default): ";
+    std::cout << "Enter config file path: ";
     std::cin >> configPath;
-    std::cout << "Enter map file path (leave empty for default): ";
+    std::cout << "Enter map file path: ";
     std::cin >> mapPath;
 
     if (configPath.empty()) {
